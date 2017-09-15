@@ -21,15 +21,15 @@
             }
         };
 
-      
         ----创建新线程并实现Runnable对象
           Thread workThread = new Thread(null,myWorker,"WorkThread");
                 
         ----启动线程        
           workThread.start();
           
-          
-        在run方法中使用Hander.sendMessage(Message)将消息发送给主线程，在主线程Handler.handleMessage()中接收并处理该消息
+        在run方法中
+               用Hander.sendMessage(Message)将消息发送给主线程
+               在主线程Handler.handleMessage()中接收并处理该消息
         
         注意有一点：
         Android不能再子线程中直接修改UI界面，只可以通过handler在主线程中处理。
